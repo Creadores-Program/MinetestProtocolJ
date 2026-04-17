@@ -2,7 +2,7 @@ package org.CreadoresProgram.minetest.protocol.packet.client;
 import com.github.steveice10.packetlib.io.NetInput;
 import com.github.steveice10.packetlib.io.NetOutput;
 import com.github.steveice10.packetlib.packet.Packet;
-//import org.CreadoresProgram.minetest.protocol.MinetestConstants;
+import org.CreadoresProgram.minetest.protocol.MinetestConstants;
 
 import java.io.IOException;
 
@@ -27,10 +27,8 @@ public class ClientInitPacket implements Packet{
   public ClientInitPacket(short serializationVersion, int compressionModes, String playerName){
     this.serializationVersion = serializationVersion;
     this.compressionModes = compressionModes;
-    /*
     this.minProtocolVersion = MinetestConstants.MIN_PROTOCOL_VERSION;
     this.maxProtocolVersion = MinetestConstants.MAX_PROTOCOL_VERSION;
-    */
     this.playerName = playerName;
   }
   public short getSerializationVersion(){
