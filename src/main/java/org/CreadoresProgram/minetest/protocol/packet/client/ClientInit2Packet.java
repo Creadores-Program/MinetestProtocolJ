@@ -19,4 +19,8 @@ public class ClientInit2Packet implements Packet{
   @Override
   public void write(NetOutput out) throws IOException {
   }
+  @Override
+  public boolean isPriority() {
+    return false;
+  }
 }
