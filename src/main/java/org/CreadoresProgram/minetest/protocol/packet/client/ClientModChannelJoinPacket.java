@@ -33,4 +33,8 @@ public class ClientModChannelJoinPacket implements Packet{
   public void write(NetOutput out) throws IOException {
     out.writeString(this.channelName);
   }
+  @Override
+  public boolean isPriority() {
+    return false;
+  }
 }
