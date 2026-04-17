@@ -7,7 +7,11 @@ import java.io.IOException;
 
 public class ClientInit2Packet implements Packet{
 
-  private ClientInit2Packet() {
+  /*
+		Sent as an ACK for TOCLIENT_AUTH_ACCEPT.
+		After this, the server can send data.
+	*/
+  public ClientInit2Packet() {
   }
   @Override
   public void read(NetInput in) throws IOException {
