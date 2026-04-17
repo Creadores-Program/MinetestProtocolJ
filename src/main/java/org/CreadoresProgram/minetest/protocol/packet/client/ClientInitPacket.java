@@ -59,4 +59,8 @@ public class ClientInitPacket implements Packet{
     out.writeShort(this.maxProtocolVersion);
     out.writeString(this.playerName);
   }
+  @Override
+  public boolean isPriority() {
+    return false;
+  }
 }
