@@ -20,12 +20,14 @@ public class MinetestProtocol extends PacketProtocol{
 	public void newClientSession(Client client, Session session) {
     this.registerOutgoing(0x02, ClientInitPacket.class);
     this.registerOutgoing(0x11, ClientInit2Packet.class);
-	this.registerOutgoing(0x17, ClientModChannelJoinPacket.class);
+	  this.registerOutgoing(0x17, ClientModChannelJoinPacket.class);
+    this.registerOutgoing(0x18, ClientModChannelLeavePacket.class);
   }
   @Override
 	public void newServerSession(Server server, Session session) {
     this.registerIncoming(0x02, ClientInitPacket.class);
     this.registerIncoming(0x11, ClientInit2Packet.class);
-	this.registerIncoming(0x17, ClientModChannelJoinPacket.class);
+	  this.registerIncoming(0x17, ClientModChannelJoinPacket.class);
+    this.registerIncoming(0x18, ClientModChannelLeavePacket.class);
   }
 }
