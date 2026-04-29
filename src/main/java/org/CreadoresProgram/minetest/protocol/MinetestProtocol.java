@@ -23,6 +23,12 @@ public class MinetestProtocol extends PacketProtocol{
 	  this.registerOutgoing(0x17, ClientModChannelJoinPacket.class);
     this.registerOutgoing(0x18, ClientModChannelLeavePacket.class);
     this.registerOutgoing(0x19, ClientModChannelMsgPacket.class);
+    this.registerOutgoing(0x23, ClientPlayerPosPacket.class);
+    /*
+    this.registerOutgoing(0x24, ClientGotBlocksPacket.class);
+    this.registerOutgoing(0x25, ClientDeletedBlocksPacket.class);
+    this.registerOutgoing(0x31, ClientInventoryActionPacket.class);
+    */
   }
   @Override
 	public void newServerSession(Server server, Session session) {
@@ -31,5 +37,11 @@ public class MinetestProtocol extends PacketProtocol{
 	  this.registerIncoming(0x17, ClientModChannelJoinPacket.class);
     this.registerIncoming(0x18, ClientModChannelLeavePacket.class);
     this.registerIncoming(0x19, ClientModChannelMsgPacket.class);
+    this.registerIncoming(0x23, ClientPlayerPosPacket.class);
+    /*
+    this.registerIncoming(0x24, ClientGotBlocksPacket.class);
+    this.registerIncoming(0x25, ClientDeletedBlocksPacket.class);
+    this.registerIncoming(0x31, ClientInventoryActionPacket.class);
+    */
   }
 }
