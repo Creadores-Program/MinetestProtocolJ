@@ -31,6 +31,9 @@ public class MinetestProtocol extends PacketProtocol{
     */
     this.registerOutgoing(0x32, ClientChatMessagePacket.class);
     this.registerOutgoing(0x35, ClientDamagePacket.class);
+    this.registerOutgoing(0x37, ClientPlayerItemPacket.class);
+    this.registerOutgoing(0x38, ClientRespawnLegacyPacket.class);
+    this.registerOutgoing(0x39, ClientInteractPacket.class);
   }
   @Override
 	public void newServerSession(Server server, Session session) {
@@ -47,5 +50,8 @@ public class MinetestProtocol extends PacketProtocol{
     */
     this.registerIncoming(0x32, ClientChatMessagePacket.class);
     this.registerIncoming(0x35, ClientDamagePacket.class);
+    this.registerIncoming(0x37, ClientPlayerItemPacket.class);
+    this.registerIncoming(0x38, ClientRespawnLegacyPacket.class);
+    this.registerIncoming(0x39, ClientInteractPacket.class);
   }
 }
