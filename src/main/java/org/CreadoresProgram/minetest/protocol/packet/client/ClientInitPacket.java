@@ -43,6 +43,9 @@ public class ClientInitPacket implements Packet{
   public int getMaxProtocolVersion(){
     return this.maxProtocolVersion;
   }
+  public String getPlayerName(){
+    return this.playerName;
+  }
   @Override
   public void read(NetInput in) throws IOException {
     this.serializationVersion = (short) in.readUnsignedByte();

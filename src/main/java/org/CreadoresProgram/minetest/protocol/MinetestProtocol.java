@@ -24,16 +24,20 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerOutgoing(0x18, ClientModChannelLeavePacket.class);
     this.registerOutgoing(0x19, ClientModChannelMsgPacket.class);
     this.registerOutgoing(0x23, ClientPlayerPosPacket.class);
-    /*
     this.registerOutgoing(0x24, ClientGotBlocksPacket.class);
     this.registerOutgoing(0x25, ClientDeletedBlocksPacket.class);
-    this.registerOutgoing(0x31, ClientInventoryActionPacket.class);
-    */
+    //this.registerOutgoing(0x31, ClientInventoryActionPacket.class);
     this.registerOutgoing(0x32, ClientChatMessagePacket.class);
     this.registerOutgoing(0x35, ClientDamagePacket.class);
     this.registerOutgoing(0x37, ClientPlayerItemPacket.class);
     this.registerOutgoing(0x38, ClientRespawnLegacyPacket.class);
     this.registerOutgoing(0x39, ClientInteractPacket.class);
+    this.registerOutgoing(0x3a, ClientRemovedSoundsPacket.class);
+    this.registerOutgoing(0x3b, ClientNodeMetaFieldsPacket.class);
+    this.registerOutgoing(0x3c, ClientInventoryFieldsPacket.class);
+    this.registerOutgoing(0x40, ClientRequestMediaPacket.class);
+    this.registerOutgoing(0x41, ClientHaveMediaPacket.class);
+    this.registerOutgoing(0x43, ClientReadyPacket.class);
   }
   @Override
 	public void newServerSession(Server server, Session session) {
@@ -43,15 +47,19 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerIncoming(0x18, ClientModChannelLeavePacket.class);
     this.registerIncoming(0x19, ClientModChannelMsgPacket.class);
     this.registerIncoming(0x23, ClientPlayerPosPacket.class);
-    /*
     this.registerIncoming(0x24, ClientGotBlocksPacket.class);
     this.registerIncoming(0x25, ClientDeletedBlocksPacket.class);
-    this.registerIncoming(0x31, ClientInventoryActionPacket.class);
-    */
+    //this.registerIncoming(0x31, ClientInventoryActionPacket.class);
     this.registerIncoming(0x32, ClientChatMessagePacket.class);
     this.registerIncoming(0x35, ClientDamagePacket.class);
     this.registerIncoming(0x37, ClientPlayerItemPacket.class);
     this.registerIncoming(0x38, ClientRespawnLegacyPacket.class);
     this.registerIncoming(0x39, ClientInteractPacket.class);
+    this.registerIncoming(0x3a, ClientRemovedSoundsPacket.class);
+    this.registerIncoming(0x3b, ClientNodeMetaFieldsPacket.class);
+    this.registerIncoming(0x3c, ClientInventoryFieldsPacket.class);
+    this.registerIncoming(0x40, ClientRequestMediaPacket.class);
+    this.registerIncoming(0x41, ClientHaveMediaPacket.class);
+    this.registerIncoming(0x43, ClientReadyPacket.class);
   }
 }
