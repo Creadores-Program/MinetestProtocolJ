@@ -15,4 +15,22 @@ public class MinetestConstants {
   public static final byte PATCH_VERSION = 2;
   //version full String
   public static final String FULL_VERSION = MAJOR_VERSION + "." MINOR_VERSION + "." + PATCH_VERSION + "-Lua";
+  /**
+     * Flag key for a session's player username.
+     * <p>
+     * Available on both clients and servers, set automatically based on provided username.
+  */
+  public static final String USERNAME_KEY = "username";
+  /**
+     * Flag key for a session's verification key.
+     * <p>
+     * Available only on clients, set automatically based on provided key.
+  */
+  public static final String VERIFICATION_KEY = "verification-key";
+  /**
+     * Flag key for a session's server list salt.
+     * <p>
+     * Available only on servers, set automatically by server list heartbeat.
+  */
+  public static final String SALT_KEY = "salt";
 }

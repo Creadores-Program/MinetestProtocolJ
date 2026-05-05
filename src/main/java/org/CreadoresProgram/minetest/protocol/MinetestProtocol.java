@@ -38,6 +38,9 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerOutgoing(0x40, ClientRequestMediaPacket.class);
     this.registerOutgoing(0x41, ClientHaveMediaPacket.class);
     this.registerOutgoing(0x43, ClientReadyPacket.class);
+    this.registerOutgoing(0x50, ClientFirstSrpPacket.class);
+    this.registerOutgoing(0x51, ClientSrpBytesAPacket.class);
+    this.registerOutgoing(0x52, ClientSrpBytesMPacket.class);
   }
   @Override
 	public void newServerSession(Server server, Session session) {
@@ -61,5 +64,8 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerIncoming(0x40, ClientRequestMediaPacket.class);
     this.registerIncoming(0x41, ClientHaveMediaPacket.class);
     this.registerIncoming(0x43, ClientReadyPacket.class);
+    this.registerIncoming(0x50, ClientFirstSrpPacket.class);
+    this.registerIncoming(0x51, ClientSrpBytesAPacket.class);
+    this.registerIncoming(0x52, ClientSrpBytesMPacket.class);
   }
 }
