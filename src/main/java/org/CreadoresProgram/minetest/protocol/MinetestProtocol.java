@@ -26,7 +26,7 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerOutgoing(0x23, ClientPlayerPosPacket.class);
     this.registerOutgoing(0x24, ClientGotBlocksPacket.class);
     this.registerOutgoing(0x25, ClientDeletedBlocksPacket.class);
-    //this.registerOutgoing(0x31, ClientInventoryActionPacket.class);
+    this.registerOutgoing(0x31, ClientInventoryActionPacket.class);
     this.registerOutgoing(0x32, ClientChatMessagePacket.class);
     this.registerOutgoing(0x35, ClientDamagePacket.class);
     this.registerOutgoing(0x37, ClientPlayerItemPacket.class);
@@ -41,6 +41,8 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerOutgoing(0x50, ClientFirstSrpPacket.class);
     this.registerOutgoing(0x51, ClientSrpBytesAPacket.class);
     this.registerOutgoing(0x52, ClientSrpBytesMPacket.class);
+    this.registerOutgoing(0x53, ClientUpdateInfoPacket.class);
+    this.registerOutgoing(0x54, ClientNumMsgTypesPacket.class);
   }
   @Override
 	public void newServerSession(Server server, Session session) {
@@ -52,7 +54,7 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerIncoming(0x23, ClientPlayerPosPacket.class);
     this.registerIncoming(0x24, ClientGotBlocksPacket.class);
     this.registerIncoming(0x25, ClientDeletedBlocksPacket.class);
-    //this.registerIncoming(0x31, ClientInventoryActionPacket.class);
+    this.registerIncoming(0x31, ClientInventoryActionPacket.class);
     this.registerIncoming(0x32, ClientChatMessagePacket.class);
     this.registerIncoming(0x35, ClientDamagePacket.class);
     this.registerIncoming(0x37, ClientPlayerItemPacket.class);
@@ -67,5 +69,7 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerIncoming(0x50, ClientFirstSrpPacket.class);
     this.registerIncoming(0x51, ClientSrpBytesAPacket.class);
     this.registerIncoming(0x52, ClientSrpBytesMPacket.class);
+    this.registerIncoming(0x53, ClientUpdateInfoPacket.class);
+    this.registerIncoming(0x54, ClientNumMsgTypesPacket.class);
   }
 }
