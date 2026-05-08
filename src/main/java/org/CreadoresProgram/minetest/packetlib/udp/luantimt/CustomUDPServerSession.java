@@ -7,10 +7,10 @@ import io.netty.channel.ChannelHandlerContext;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TcpServerSession extends CustomUDPSession {
+public class CustomUDPServerSession extends CustomUDPSession {
     private Server server;
 
-    public TcpServerSession(String host, int port, PacketProtocol protocol, Server server) {
+    public CustomUDPServerSession(String host, int port, PacketProtocol protocol, Server server) {
         super(host, port, protocol);
         this.server = server;
     }
