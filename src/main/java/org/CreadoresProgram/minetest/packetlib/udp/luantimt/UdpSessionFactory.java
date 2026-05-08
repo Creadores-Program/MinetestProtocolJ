@@ -10,23 +10,23 @@ import com.github.steveice10.packetlib.SessionFactory;
 /**
  * A session factory used to create UDP sessions.
  */
-public class CustomUDPSessionFactory implements SessionFactory {
+public class UdpSessionFactory implements SessionFactory {
     private ProxyInfo clientProxy;
 
-    public CustomUDPSessionFactory() {
+    public UdpSessionFactory() {
     }
 
-    public CustomUDPSessionFactory(ProxyInfo clientProxy) {
+    public UdpSessionFactory(ProxyInfo clientProxy) {
         this.clientProxy = clientProxy;
     }
 
     @Override
     public Session createClientSession(final Client client) {
-        return new CustomUDPClientSession(client.getHost(), client.getPort(), client.getPacketProtocol(), client, this.clientProxy);
+        return new UdpClientSession(client.getHost(), client.getPort(), client.getPacketProtocol(), client, this.clientProxy);
     }
 
     @Override
     public ConnectionListener createServerListener(final Server server) {
-        return new CustomUDPConnectionListener(server.getHost(), server.getPort(), server);
+        return new UdpConnectionListener(server.getHost(), server.getPort(), server);
     }
 }
