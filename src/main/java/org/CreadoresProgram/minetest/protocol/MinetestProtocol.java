@@ -39,6 +39,7 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerIncoming(0x04, ServerAcceptSudoModePacket.class);
     this.registerIncoming(0x05, ServerDenySudoModePacket.class);
     this.registerIncoming(0x0A, ServerAccessDeniedPacket.class);
+    this.registerIncoming(0x20, ServerBlockDataPacket.class);
 
     this.registerOutgoing(0x02, ClientInitPacket.class);
     this.registerOutgoing(0x11, ClientInit2Packet.class);
@@ -99,5 +100,6 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerOutgoing(0x04, ServerAcceptSudoModePacket.class);
     this.registerOutgoing(0x05, ServerDenySudoModePacket.class);
     this.registerOutgoing(0x0A, ServerAccessDeniedPacket.class);
+    this.registerOutgoing(0x20, ServerBlockDataPacket.class);
   }
 }

@@ -18,6 +18,7 @@ public class ByteBufMtNetOutput extends ByteBufNetOutput{
         }
         byte[] sby = s.getBytes(StandardCharsets.UTF_8);
         this.writeShort(sby.length);
+        if (sby.length == 0) return;
         this.writeBytes(sby);
     }
 }

@@ -14,6 +14,7 @@ public class ByteBufMtNetInput extends ByteBufNetInput{
     @Override
     public String readString() throws IOException{
         int len = this.readUnsignedShort();
+        if (len == 0) return "";
         return new String(this.readBytes(len), StandardCharsets.UTF_8);
     }
 }
