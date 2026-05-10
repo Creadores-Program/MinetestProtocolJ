@@ -7,17 +7,39 @@ import com.github.steveice10.packetlib.crypt.PacketEncryption;
 import com.github.steveice10.packetlib.packet.PacketHeader;
 import com.github.steveice10.packetlib.packet.PacketProtocol;
 import org.CreadoresProgram.minetest.protocol.packet.client.*;
+import org.CreadoresProgram.minetest.protocol.packet.server.*;
 
 public class MinetestProtocol extends PacketProtocol{
+
+  private PacketHeader header = new MinetestPacketHeader();
   @SuppressWarnings("unused")
 	private MinetestProtocol() {
   }
+  
   @Override
   public String getSRVRecordPrefix() {
-      return "_minetest_luanti";
+    return "_minetest_luanti";
   }
+
+  @Override
+	public PacketHeader getPacketHeader() {
+		return this.header;
+	}
+
+	@Override
+	public PacketEncryption getEncryption() {
+		return null;
+	}
+
   @Override
 	public void newClientSession(Client client, Session session) {
+
+    this.registerIncoming(0x02, ServerInitPacket.class);
+    this.registerIncoming(0x03, ServerAuthAcceptPacket.class);
+    this.registerIncoming(0x04, ServerAcceptSudoModePacket.class);
+    this.registerIncoming(0x05, ServerDenySudoModePacket.class);
+    this.registerIncoming(0x0A, ServerAccessDeniedPacket.class);
+
     this.registerOutgoing(0x02, ClientInitPacket.class);
     this.registerOutgoing(0x11, ClientInit2Packet.class);
 	  this.registerOutgoing(0x17, ClientModChannelJoinPacket.class);
@@ -71,5 +93,11 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerIncoming(0x52, ClientSrpBytesMPacket.class);
     this.registerIncoming(0x53, ClientUpdateInfoPacket.class);
     this.registerIncoming(0x54, ClientNumMsgTypesPacket.class);
+
+    this.registerOutgoing(0x02, ServerInitPacket.class);
+    this.registerOutgoing(0x03, ServerAuthAcceptPacket.class);
+    this.registerOutgoing(0x04, ServerAcceptSudoModePacket.class);
+    this.registerOutgoing(0x05, ServerDenySudoModePacket.class);
+    this.registerOutgoing(0x0A, ServerAccessDeniedPacket.class);
   }
 }
