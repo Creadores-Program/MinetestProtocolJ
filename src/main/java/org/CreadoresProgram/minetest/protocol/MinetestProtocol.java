@@ -33,13 +33,17 @@ public class MinetestProtocol extends PacketProtocol{
 
   @Override
 	public void newClientSession(Client client, Session session) {
-
     this.registerIncoming(0x02, ServerInitPacket.class);
     this.registerIncoming(0x03, ServerAuthAcceptPacket.class);
     this.registerIncoming(0x04, ServerAcceptSudoModePacket.class);
     this.registerIncoming(0x05, ServerDenySudoModePacket.class);
     this.registerIncoming(0x0A, ServerAccessDeniedPacket.class);
     this.registerIncoming(0x20, ServerBlockDataPacket.class);
+    this.registerIncoming(0x21, ServerAddNodePacket.class);
+    this.registerIncoming(0x22, ServerRemoveNodePacket.class);
+    this.registerIncoming(0x27, ServerInventoryPacket.class);
+    this.registerIncoming(0x29, ServerTimeOfDayPacket.class);
+    this.registerIncoming(0x2A, ServerCsmRestrictionFlagsPacket.class);
 
     this.registerOutgoing(0x02, ClientInitPacket.class);
     this.registerOutgoing(0x11, ClientInit2Packet.class);
@@ -101,5 +105,10 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerOutgoing(0x05, ServerDenySudoModePacket.class);
     this.registerOutgoing(0x0A, ServerAccessDeniedPacket.class);
     this.registerOutgoing(0x20, ServerBlockDataPacket.class);
+    this.registerOutgoing(0x21, ServerAddNodePacket.class);
+    this.registerOutgoing(0x22, ServerRemoveNodePacket.class);
+    this.registerOutgoing(0x27, ServerInventoryPacket.class);
+    this.registerOutgoing(0x29, ServerTimeOfDayPacket.class);
+    this.registerOutgoing(0x2A, ServerCsmRestrictionFlagsPacket.class);
   }
 }
