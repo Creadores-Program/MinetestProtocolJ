@@ -45,6 +45,7 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerIncoming(0x29, ServerTimeOfDayPacket.class);
     this.registerIncoming(0x2A, ServerCsmRestrictionFlagsPacket.class);
     this.registerIncoming(0x2B, ServerPlayerSpeedPacket.class);
+    this.registerIncoming(0x2C, ServerMediaPushPacket.class);
 
     this.registerOutgoing(0x02, ClientInitPacket.class);
     this.registerOutgoing(0x11, ClientInit2Packet.class);
@@ -112,5 +113,6 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerOutgoing(0x29, ServerTimeOfDayPacket.class);
     this.registerOutgoing(0x2A, ServerCsmRestrictionFlagsPacket.class);
     this.registerOutgoing(0x2B, ServerPlayerSpeedPacket.class);
+    this.registerOutgoing(0x2C, ServerMediaPushPacket.class);
   }
 }
