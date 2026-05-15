@@ -49,6 +49,10 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerIncoming(0x2F, ServerChatMessagePacket.class);
     this.registerIncoming(0x31, ServerActiveObjectRemoveAddPacket.class);
     this.registerIncoming(0x32, ServerActiveObjectMessagesPacket.class);
+    this.registerIncoming(0x33, ServerHpPacket.class);
+    this.registerIncoming(0x34, ServerMovePlayerPacket.class);
+    this.registerIncoming(0x35, ServerAccessDeniedLegacyPacket.class);
+    this.registerIncoming(0x36, ServerFovPacket.class);
 
     this.registerOutgoing(0x02, ClientInitPacket.class);
     this.registerOutgoing(0x11, ClientInit2Packet.class);
@@ -120,5 +124,9 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerOutgoing(0x2F, ServerChatMessagePacket.class);
     this.registerOutgoing(0x31, ServerActiveObjectRemoveAddPacket.class);
     this.registerOutgoing(0x32, ServerActiveObjectMessagesPacket.class);
+    this.registerOutgoing(0x33, ServerHpPacket.class);
+    this.registerOutgoing(0x34, ServerMovePlayerPacket.class);
+    this.registerOutgoing(0x35, ServerAccessDeniedLegacyPacket.class);
+    this.registerOutgoing(0x36, ServerFovPacket.class);
   }
 }
