@@ -54,6 +54,9 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerIncoming(0x35, ServerAccessDeniedLegacyPacket.class);
     this.registerIncoming(0x36, ServerFovPacket.class);
     this.registerIncoming(0x37, ServerDeathScreenLegacyPacket.class);
+    this.registerIncoming(0x38, ServerMediaPacket.class);
+    this.registerIncoming(0x3a, ServerNodeDefPacket.class);
+    //this.registerIncoming(0x3c, ServerAnnounceMediaPacket.class);
 
     this.registerOutgoing(0x02, ClientInitPacket.class);
     this.registerOutgoing(0x11, ClientInit2Packet.class);
@@ -130,5 +133,8 @@ public class MinetestProtocol extends PacketProtocol{
     this.registerOutgoing(0x35, ServerAccessDeniedLegacyPacket.class);
     this.registerOutgoing(0x36, ServerFovPacket.class);
     this.registerOutgoing(0x37, ServerDeathScreenLegacyPacket.class);
+    this.registerOutgoing(0x38, ServerMediaPacket.class);
+    this.registerOutgoing(0x3a, ServerNodeDefPacket.class);
+    //this.registerOutgoing(0x3c, ServerAnnounceMediaPacket.class);
   }
 }
